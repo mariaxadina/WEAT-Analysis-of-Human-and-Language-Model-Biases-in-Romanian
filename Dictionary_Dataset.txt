@@ -1,0 +1,37 @@
+DATASET
+
+ENG.
+WEAPONS: arrow, club, gun, missile, spear, axe, dagger, harpoon, pistol, sword, blade, dynamite, hatchet, rifle, tank, bomb, firearm, knife, shotgun, teargas, cannon, grenade, mace, slingshot, whip.
+
+RO.
+ARME: săgeată, bâtă, pistol, rachetă, suliță, topor, pumnal, harpon, pistol, sabie, lamă, dinamită, secure, mitralieră, tanc, bombă, armă de foc, cuţit, pușcă de vânătoare, gaz lacrimogen, tun, grenadă, buzdugan, praștie, bici. 
+
+ENG.
+FLOWERS: aster, clover, hyacinth, marigold, poppy, azalea, crocus, iris, orchid, rose, blue-bell, daffodil, lilac, pansy, tulip, buttercup, daisy, lily, peony, violet, carnation, gladiola, magnolia, petunia, zinnia
+
+RO.
+FLORI: aster, trifoi, zambilă, gălbenele, mac, azalea, brândușă, iris, orhidee, trandafir, clopoțel, narcisă, liliac, panseluță, lalea, piciorul-cocoșului, margaretă, crin, bujor, violetă, garoafă, glandiolă, magnolie, petunie, cârciumăreasă.
+
+ENG.
+INSTRUMENTS: bagpipe, cello, guitar, lute, trombone, banjo, clarinet, harmonica, mandolin, trumpet, bassoon, drum, harp, oboe, tuba, bell, fiddle, harpsichord, piano, viola, bongo, flute, horn, saxophone, violin
+
+RO.
+INSTRUMENTE: cimpoi, violoncel, chitară, lăută, trombon, banjo, clarinet, muzicuță, mandolină, trompetă, fagot, tobă, harpă, oboi, tubă, clopot, scripcă, clavecin, pian, violă, bongo, flaut, corn, saxofon, vioară
+
+ENG.
+INSECTS: ant, caterpillar, flea, locust, spider, bedbug, centipede, fly, maggot, tarantula, bee, cockroach, gnat, mosquito, termite, beetle, cricket, hornet, moth, wasp, blackfly, dragonfly, horsefly, roach, weevil
+
+RO.
+INSECTE: furnică, omidă, purice, lăcustă, păianjen, ploșniță, centipedă, muscă, larvă, tarantulă, albină, gândac de bucătărie, ţânţar mic, țânțar, termită, cărăbuș, greiere, gărgăun, molie, viespe, musculiță, libelulă, tăun, gândac, gărgăriță
+
+ENG.
+PLEASANT: caress, freedom, health, love, peace, cheer, friend, heaven, loyal, pleasure, diamond, gentle, honest, lucky, rainbow, diploma, gift, honor, miracle, sunrise, family, happy, laughter, paradise, vacation
+
+RO.
+PLACUT: mângâiere, libertate, sănătate, iubire, pace, veselie, prieten, rai, loial, plăcere, diamant, blând, onest, norocos, curcubeu, diplomă, cadou, onoare, miracol, răsărit, familie, fericit, râs, paradis, vacanță
+
+ENG.
+UNPLEASANT: abuse, crash, filth, murder, sickness, accident, death, grief, poison, stink, assault, disaster, hatred, pollute, tragedy, divorce, jail, poverty, ugly, cancer, kill, rotten, vomit, agony, prison
+
+RO.
+NEPLACUT: abuz, accident auto, murdărie, crimă, boală, accident, moarte, doliu, otravă, duhoare, atac, dezastru, ură, poluare, tragedie, divorț, arest, sărăcie, urât, cancer, ucidere, putred, vomă, agonie, închisoare
