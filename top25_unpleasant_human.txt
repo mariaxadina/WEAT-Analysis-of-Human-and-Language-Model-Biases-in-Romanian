@@ -1,0 +1,28 @@
+Top 25 Most Unpleasant Words (Human)
+====================================
+
+ 1. cancer                         1.025
+ 2. ucidere                        1.075
+ 3. duhoare                        1.225
+ 4. doliu                          1.250
+ 5. putred                         1.250
+ 6. agonie                         1.250
+ 7. voma                           1.325
+ 8. inchisoare                     1.325
+ 9. moarte                         1.400
+10. otrava                         1.400
+11. saracie                        1.425
+12. accident auto                  1.475
+13. tragedie                       1.475
+14. crima                          1.500
+15. boala                          1.500
+16. accident                       1.525
+17. arest                          1.550
+18. gandac de bucatarie            1.600
+19. divort                         1.650
+20. poluare                        1.700
+21. dezastru                       1.725
+22. plosnita                       1.750
+23. termita                        1.775
+24. urat                           1.800
+25. ura                            1.900

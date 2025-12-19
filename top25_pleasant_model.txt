@@ -1,0 +1,28 @@
+Top 25 Most Pleasant Words (Language Model)
+===========================================
+
+ 1. mangaiere                      7.000
+ 2. libertate                      7.000
+ 3. sanatate                       7.000
+ 4. iubire                         7.000
+ 5. pace                           7.000
+ 6. veselie                        7.000
+ 7. prieten                        7.000
+ 8. placere                        7.000
+ 9. onest                          7.000
+10. curcubeu                       7.000
+11. cadou                          7.000
+12. miracol                        7.000
+13. rasarit                        7.000
+14. familie                        7.000
+15. fericit                        7.000
+16. ras                            7.000
+17. paradis                        7.000
+18. vacanta                        7.000
+19. trandafir                      6.833
+20. loial                          6.833
+21. bland                          6.833
+22. norocos                        6.833
+23. onoare                         6.833
+24. orhidee                        6.667
+25. magnolie                       6.667

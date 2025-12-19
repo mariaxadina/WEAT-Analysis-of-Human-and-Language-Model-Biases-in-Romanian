@@ -1,46 +1,97 @@
 import pandas as pd
 import numpy as np
+import spacy
 from scipy.stats import ttest_ind
 import matplotlib.pyplot as plt
 
+#  definition of categories 
 
-df_oameni = pd.read_csv("oameni.csv")
-df_modele = pd.read_csv("modele.csv")
+WORDS = [
+"săgeată", "bâtă", "pistol", "rachetă", "suliță", "topor", "pumnal",
+"harpon","pistol", "sabie", "lamă", "dinamită", "secure", "mitralieră", "tanc",
+"bombă", "armă de foc", "cuțit", "pușcă de vânătoare", "gaz lacrimogen",
+"tun", "grenadă", "buzdugan", "praștie", "bici",
 
-#  definition of categories CA-WEAT
+"aster", "trifoi", "zambilă", "gălbenele", "mac", "azalea", "brândușă",
+"iris", "orhidee", "trandafir", "clopoțel", "narcisă", "liliac",
+"panseluță", "lalea", "piciorul-cocoșului", "margaretă", "crin",
+"bujor", "violetă", "garoafă", "gladiolă", "magnolie", "petunie",
+"cârciumăreasă",
 
-ARME = [
-"sageata","bata","pistol","racheta","sulita","topor","pumnal","harpon","pistol","sabie",
-"lama","dinamita","secure","mitraliera","tanc","bomba","arma_de_foc","cutit","pusca_de_vanatoare",
-"gaz_lacrimogen","tun","grenada","buzdugan","prastie","bici"
+"cimpoi", "violoncel", "chitară", "lăută", "trombon", "banjo",
+"clarinet", "muzicuță", "mandolină", "trompetă", "fagot", "tobă",
+"harpă", "oboi", "tubă", "clopot", "scripcă", "clavecin", "pian",
+"violă", "bongo", "flaut", "corn", "saxofon", "vioară",
+
+"furnică", "omidă", "purice", "lăcustă", "păianjen", "ploșniță",
+"centipedă", "muscă", "larvă", "tarantulă", "albină",
+"gândac de bucătărie", "țânțar mic", "țânțar", "termită", "cărăbuș",
+"greiere", "gărgăun", "molie", "viespe", "musculiță", "libelulă", "tăun", "gândac", "gărgăriță",
+
+"mângâiere", "libertate", "sănătate", "iubire", "pace", "veselie",
+"prieten", "rai", "loial", "plăcere", "diamant", "blând", "onest",
+"norocos", "curcubeu", "diplomă", "cadou", "onoare", "miracol",
+"răsărit", "familie", "fericit", "râs", "paradis", "vacanță",
+
+"abuz", "accident auto", "murdărie", "crimă", "boală", "accident",
+"moarte", "doliu", "otravă", "duhoare", "atac", "dezastru", "ură",
+"poluare", "tragedie", "divorț", "arest", "sărăcie", "urât",
+"cancer", "ucidere", "putred", "vomă", "agonie", "închisoare"
 ]
 
-FLORI = [
-"aster","trifoi","zambila","galbenele","mac","azalea","brandusa","iris","orhidee","trandafir",
-"clopotel","narcisa","liliac","panseluta","lalea","piciorul_cocosului","margareta","crin",
-"bujor","violeta","garoafa","glandiola","magnolie","petunie","carciumareasa"
-]
 
-INSTRUMENTE = [
-"cimpoi","violoncel","chitara","lauta","trombon","banjo","clarinet","muzicuta","mandolina","trompeta",
-"fagot","toba","harpa","oboi","tuba","clopot","scripca","clavecin","pian","viola",
-"bongo","flaut","corn","saxofon","vioara"
-]
+nlp = spacy.load("ro_core_news_lg")
 
-INSECTE = [
-"furnica","omida","purice","lacusta","paianjen","plosnita","centipeda","musca","larva","tarantula",
-"albina","gandac_de_bucatarie","tantar_mic","tantar","termita","carabus","greiere","gargaun",
-"molie","viespe","musculita","libelula","taun","gandac","gargarita"
-]
+negative_word = "neplăcut"
+doc_negative = nlp(negative_word)
 
-PLACUT = [
-"mangaiere","libertate","sanatate","iubire","pace","veselie","prieten","rai","loial","placere",
-"diamant","bland","onest","norocos","curcubeu","diploma","cadou","onoare","miracol","rasarit",
-"familie","fericit","ras","paradis","vacanta"
-]
+positive_word = "plăcut"
+doc_positive = nlp(positive_word)
 
-NEPLACUT = [
-"abuz","accident_auto","murdarie","crima","boala","accident","moarte","doli u","otrava","duhoare",
-"atac","dezastru","ura","poluare","tragedie","divort","arest","saracie","urat","cancer","ucidere",
-"putred","voma","agonie","inchisoare"
-]
+word_similarities = {}
+
+for word in WORDS:
+    doc_word = nlp(word)
+    
+    if doc_word.has_vector and doc_negative.has_vector and doc_positive.has_vector:
+        sim_neg = doc_word.similarity(doc_negative)
+        sim_pos = doc_word.similarity(doc_positive)
+
+        word_similarities[word] = (sim_neg, sim_pos)
+    else:
+        word_similarities[word] = (None, None)
+
+
+# > 0 → cuvintele sunt semantic apropiate
+# ≈ 0 → aproape necorelate
+# < 0 → cuvintele sunt semantic opuse în embedding space
+
+for word, (sim_neg, sim_pos) in word_similarities.items():
+    if sim_neg is not None and sim_pos is not None:
+        print(f"{word:30s} -> neg: {sim_neg:.3f}, pos: {sim_pos:.3f}")
+    else:
+        print(f"{word:30s} -> neg: N/A, pos: N/A")
+
+df_sim = pd.DataFrame.from_dict(
+    word_similarities,
+    orient="index",
+    columns=["similarity_negative", "similarity_positive"]
+)
+
+df_sim.reset_index(inplace=True)
+df_sim.rename(columns={"index": "word"}, inplace=True)
+
+top25_positive = (
+    df_sim
+    .sort_values(by="similarity_positive", ascending=False)
+    .head(25)
+)
+
+top25_negative = (
+    df_sim
+    .sort_values(by="similarity_negative", ascending=False)
+    .head(25)
+)
+
+top25_positive.to_csv("top25_semantic_pleasant.csv", index=False, encoding="utf-8")
+top25_negative.to_csv("top25_semantic_unpleasant.csv", index=False, encoding="utf-8")

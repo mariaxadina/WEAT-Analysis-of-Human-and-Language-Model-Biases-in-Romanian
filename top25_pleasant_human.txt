@@ -1,0 +1,28 @@
+Top 25 Most Pleasant Words (Human)
+==================================
+
+ 1. loial                          6.825
+ 2. iubire                         6.775
+ 3. placere                        6.775
+ 4. norocos                        6.750
+ 5. familie                        6.750
+ 6. ras                            6.725
+ 7. pace                           6.650
+ 8. prieten                        6.650
+ 9. diamant                        6.625
+10. bland                          6.625
+11. fericit                        6.600
+12. vacanta                        6.600
+13. lalea                          6.575
+14. veselie                        6.550
+15. miracol                        6.550
+16. paradis                        6.550
+17. sanatate                       6.525
+18. onest                          6.525
+19. rasarit                        6.525
+20. rai                            6.500
+21. onoare                         6.500
+22. cadou                          6.475
+23. trandafir                      6.425
+24. panseluta                      6.400
+25. pian                           6.400

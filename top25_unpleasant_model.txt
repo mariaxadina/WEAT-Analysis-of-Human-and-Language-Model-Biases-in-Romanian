@@ -1,0 +1,28 @@
+Top 25 Most Unpleasant Words (Language Model)
+=============================================
+
+ 1. abuz                           1.000
+ 2. accident auto                  1.000
+ 3. crima                          1.000
+ 4. boala                          1.000
+ 5. moarte                         1.000
+ 6. otrava                         1.000
+ 7. duhoare                        1.000
+ 8. atac                           1.000
+ 9. dezastru                       1.000
+10. ura                            1.000
+11. tragedie                       1.000
+12. cancer                         1.000
+13. ucidere                        1.000
+14. putred                         1.000
+15. voma                           1.000
+16. agonie                         1.000
+17. dinamita                       1.167
+18. mitraliera                     1.167
+19. bomba                          1.167
+20. grenada                        1.167
+21. plosnita                       1.167
+22. gandac de bucatarie            1.167
+23. murdarie                       1.167
+24. accident                       1.167
+25. doliu                          1.167
